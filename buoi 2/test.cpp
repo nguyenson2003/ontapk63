@@ -1,52 +1,44 @@
-#include <iostream>
+#include <bits/stdc++.h>
 
 using namespace std;
+#define int long
+#define long long long
 
-int main()
-{
-    int t, n;
-    unsigned long long k;
-    cin >> t;
-    for (int o = 0; o < t; o++)
-    {
-        cin >> n;
-        cin >> k;
-        if (k > n * n)
-        {
-            cout << 2 * n- 1 << endl; //2*n-1
-            continue;
-        }
+int k,x;
+
+int csc(int a){
+	return a*(a+1)/2;
+}
+
+int get(int line){
+	if (line>k)return csc(k)+csc(k-1) - csc(2*k-1-line); 
+    else
+		return csc(line);
+}
+
+int sol(){
+	cin >>k >>x;
+	int l=1, r=2*k-1;
+	int mid=(l+r)/2;
+	while (l != r){
+		// if (l==r-1)
+		// 	return l;
+		if (get(mid) >= x)
+			r=mid; 
         else
-        {
-            if (n * (n + 1) / 2 >= k)
-            {
-                int l = 1, r = n, mid;
-                while (l < r)
-                {
-                    mid = (l + r) / 2;
-                    if ((long long)mid * (mid + 1) / 2 < k)
-                        l = mid+1;
-                    else
-                        r = mid;
-                }
-                cout << r << endl;
-                continue;
-            }
-            else
-            {
-                unsigned long long h = n * (n - 1) / 2 ;
-                int l = 1, r = n - 1, mid;
-                k -= n * (n + 1) / 2;
-                while (l < r)
-                {
-                    mid = (l + r) / 2;
-                    if (h  - (long long)mid * (mid + 1) / 2 <= k)
-                        r = mid;
-                    else
-                        l = mid+1;
-                }
-                cout << r + n << endl;
-            }
-        }
-    }
+			l=mid+1;
+		mid=(l+r)/2;
+	}
+	return l;
+}
+
+
+main(){
+	int t;
+	cin >>t;
+	while (t--)
+		cout <<sol() <<endl;
+
+	return 0;
+
 }
