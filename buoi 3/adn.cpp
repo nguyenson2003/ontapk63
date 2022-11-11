@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
-#include <algorithm>
-#include <cmath>
+#include <string>
+
 using namespace std;
 #define int long
 #define long long long
@@ -20,9 +20,10 @@ void backtrack(int i,string str){
         backtrack(i+1,str+bo[i]);
     }else{
         if(bo[i]>me[i]){
-            char temp = bo[i];
-            bo[i]=me[i];
-            me[i]=temp;
+            swap(bo[i],me[i]);
+            // char temp = bo[i];
+            // bo[i]=me[i];
+            // me[i]=temp;
         }
         backtrack(i+1,str+bo[i]);
         backtrack(i+1,str+me[i]);
