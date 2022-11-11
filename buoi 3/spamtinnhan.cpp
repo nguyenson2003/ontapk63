@@ -5,10 +5,9 @@ using namespace std;
 #define keqing main
 const int mod = 1000000007;
 const int limit = 100000;
-
+//O(n!)
 int n;
 bool check[10]={};
-
 void backtrack(int i,int value){
     if(i==n){
         cout<<value<<endl;
@@ -21,7 +20,6 @@ void backtrack(int i,int value){
         check[j]=false;
     }
 }
-
 keqing(){ 
     cin>>n;
     backtrack(0,0);
