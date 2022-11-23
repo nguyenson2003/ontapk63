@@ -1,8 +1,8 @@
 //vector, map, set, dequeue, stack, prioperty_queue, tree, custom ctdl
-//[1,2,3,5,7]
 //đệ quy, quay lui, tham lam, chia để trị, quy hoạch động
 //đồ bfs, dfs
 //2 con trỏ
+
 //icpc toàn nước -> kk
 /*olp
 siêu cúp
