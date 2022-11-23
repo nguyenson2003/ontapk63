@@ -6,12 +6,11 @@ using namespace std;
 const int mod = 1000000007;
 const int limit = 1000001;
 
-
+int bat[1000001]={};
+int tat[1000001]={};
 keqing(){
     ios_base::sync_with_stdio(0); cin.tie(0);
     int n;cin>>n;
-    int bat[1000001]={};
-    int tat[1000001]={};
     int res=0;
     for(int i=0;i<n;i++){
         int a,b;cin>>a>>b;
