@@ -1,3 +1,5 @@
+//BST, segment tree, trie - custom tree, heap
+//BST < AVL cay nhi phan tu can bang - set, map < cay doden,234
 #include <iostream>
 using namespace std;
 #define int long
