@@ -15,7 +15,7 @@ keqing(){
             if(j*j>=b)break;
             int tam_giac = i*(i+1)/2;
             int hinhvuong=j*j;
-            if(hinhvuong-1==tam_giac)res++;
+            if(hinhvuong-1==tam_giac && a<hinhvuong)res++;
             if(tam_giac<hinhvuong)i++;
             else j++;
         }
