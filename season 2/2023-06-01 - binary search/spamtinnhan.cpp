@@ -30,7 +30,7 @@ keqing(){
     int t;std::cin>>t;
     while(t--) {
         int k,x;
-        cin>>k>>x;
-        cout<<bin_search(k,0,k*2-1,x)<<endl;
+        std::cin>>k>>x;
+        std::cout<<bin_search(k,0,k*2-1,x)<<std::endl;
     }
 }
