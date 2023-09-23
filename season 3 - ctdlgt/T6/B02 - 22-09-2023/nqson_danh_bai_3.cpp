@@ -28,5 +28,4 @@ keqing(){
 //		}
 //	}
 //	cout<<n;
-//	cout<<(x-(int)pow(2,(int)log(x)))*2+1;
 //}
