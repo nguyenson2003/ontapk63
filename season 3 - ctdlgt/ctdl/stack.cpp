@@ -6,7 +6,7 @@ using namespace std;
 template <class T>
 class Stack
 {
-	T *buf; 
+	T *buf;
 	int n,cap;  //n-size; cap-capacity
 	public:
 		Stack() {n=cap=0; buf=NULL;}
@@ -17,15 +17,23 @@ class Stack
 		T &top(){return buf[n-1];}
 		void push(T x)
 		{
-			if(n==cap)
+			if(n==cap)//da day
 			{
 				cap=cap*2+1;  //cap=cap?cap*2:1;
 				T *tem=new T[cap];
-				for(int i=0;i<n;i++) tem[i]=buf[i];
+				//cho ptu cu vao lo moi
+				for(int i=0;i<n;i++) 
+					tem[i]=buf[i];
+				//tem lo moi, buf lo cu
+				
+					
 				if(buf) delete[]buf;
 				buf=tem;
 			}
-			buf[n++]=x;
+			buf[n]=x;//cho c sui vao lo
+			n=n+1;// tang so luong vien trong lo
+//			
+//			buf[n++]=x;
 		}
 };
 #endif
