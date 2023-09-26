@@ -5,6 +5,7 @@ using namespace std;
 
 
 main(){
+	
 	stack<string> loCSui;
 	loCSui.push("cam");
 	loCSui.push("do");

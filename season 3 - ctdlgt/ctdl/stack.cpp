@@ -3,17 +3,18 @@
 using namespace std;
 #ifndef __stack__cpp__
 #define __stack__cpp__
+
 template <class T>
 class Stack
 {
-	T *buf;
+	T *buf;		//buffer
 	int n,cap;  //n-size; cap-capacity
 	public:
 		Stack() {n=cap=0; buf=NULL;}
 		~Stack(){if(buf) delete[]buf;}
 		int size() {return n;}
 		bool empty() {return n==0;}
-		void pop() {n--;}
+		void pop() {n--;} 
 		T &top(){return buf[n-1];}
 		void push(T x)
 		{
@@ -25,8 +26,6 @@ class Stack
 				for(int i=0;i<n;i++) 
 					tem[i]=buf[i];
 				//tem lo moi, buf lo cu
-				
-					
 				if(buf) delete[]buf;
 				buf=tem;
 			}
