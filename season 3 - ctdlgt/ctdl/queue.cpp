@@ -40,13 +40,14 @@ class Queue
 			n++;
 		}
 };
-int main()
-{
-	Queue<int> Q;
-	for(int x:{3526,52,6,72537,735,36,845}) Q.push(x);
-	Q.front()=0;
-	Q.back()*=-1;
-	while(Q.size())	{cout<<Q.front()<<" ";	Q.pop();}
-}
-
+#endif
+//int main()
+//{
+//	Queue<int> Q;
+//	for(int x:{3526,52,6,72537,735,36,845}) Q.push(x);
+//	int a = Q.front();
+//	Q.front()=10;
+//	while(Q.size())	{cout<<Q.front()<<" ";	Q.pop();}
+//}
+//
 
