@@ -15,28 +15,26 @@ class Queue
 		int size() {return n;}
 		bool empty() {return n==0;}
 		T &front() {return buf[F];}
-		T &back() {return L?buf[L-1]:buf[cap-1];}
-		void pop() {F=(F+1)%cap; n--; if(n==0) F=L=0;}
+		T &back() {return L!=0?buf[L-1]:buf[cap-1];}
+		void pop() {F=(F+1)%cap; n--;}
 		void push(T x)
 		{
 			if(n==cap) //mang da chua day cac phan tu
 			{
-				cap=cap!=0?cap*2:1;
+				cap=cap*2+1;
 				T *tem=new T[cap];
-//				int j=0;
-//				for(int i=F;i<n;i++) tem[j++]=buf[i];
-//				if(F>0) for(int i=0;i<F;i++) tem[j++]=buf[i];
-				for(int i=F,j=0;j<n	;i++,j++) 
-					tem[j]=buf[i%n];
+				int j=0;
+				for(int i=F;i<n;i++) tem[j++]=buf[i];
+				for(int i=0;i<F;i++) tem[j++]=buf[i];
+//				for(int i=F,j=0;j<n	;i++,j++) 
+//					tem[j]=buf[i%n];
 				F=0;L=n;
 				if(buf) delete[]buf;
 				buf=tem;
 			}
 			buf[L]=x;
 //			L=(L+1)%cap;
-			L=L+1;
-			if(L==cap)
-				L=0;
+			L=L+1; if(L==cap) L=0;
 			n++;
 		}
 };
