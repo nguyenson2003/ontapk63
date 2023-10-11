@@ -45,8 +45,8 @@ class Vector
 			if(tem) delete[]tem;
 		}
 	public:
-		Vector() {n=cap=0; buf=0;}
-		Vector(int k,T x)
+		Vector() {n=cap=0; buf=NULL;}
+		Vector(int k,T x)//tao k ptu deu = x
 		{
 			n=cap=k;
 			buf=new T[k];
@@ -115,33 +115,33 @@ class Vector
 		}
 };
 #endif
-int main()
-{
-	Vector<int> A(4,3);
-	A.front()=7;
-	cout<<A.front()<<"\n";
-	cout<<"\nA : "; for(int i=0;i<A.size();i++) cout<<A[i]<<" ";
-	for(auto x:{523,52,246,26})A.push_back(x);
-	cout<<"\nA : "; for(int i=0;i<A.size();i++) cout<<A[i]<<" ";
-	A.resize(13,-2);
-	cout<<"\nA : "; for(int i=0;i<A.size();i++) cout<<A[i]<<" ";
-	cout<<"\nDuyet xuoi : "; for(Vector<int>::iterator it=A.begin();it!=A.end();it++) cout<<*it<<" ";
-	cout<<"\nDuyet xuoi : "; for(auto x:A) cout<<x<<" ";
-	sort(A.begin(),A.end(),greater<int> ());
-	cout<<"\nDuyet xuoi : "; for(auto x:A) cout<<x<<" ";
-	auto it=A.begin(); it+=7;
-	A.insert(it,-5);
-	cout<<"\nDuyet xuoi : "; for(auto x:A) cout<<x<<" ";
-	it=A.begin(); it+=2;
-	A.erase(it);
-	cout<<"\nA : "; for(int x:A) cout<<x<<" ";
-	Vector<int> B=A;  //toan tu copy
-	cout<<"\nB : "; for(auto x:B) cout<<x<<" ";	
-	Vector<int> C;
-	C=A;    //toan tu gan = 
-	cout<<"\nC : "; for(auto x:C) cout<<x<<" ";	
-	cout<<"\nDuyet nguoc : ";
-	for(Vector<int>::reverse_iterator it=A.rbegin();it!=A.rend();it++) cout<<*it<<" ";
-}
+//int main()
+//{
+//	Vector<int> A(4,3);
+//	A.front()=7;
+//	cout<<A.front()<<"\n";
+//	cout<<"\nA : "; for(int i=0;i<A.size();i++) cout<<A[i]<<" ";
+//	for(auto x:{523,52,246,26})A.push_back(x);
+//	cout<<"\nA : "; for(int i=0;i<A.size();i++) cout<<A[i]<<" ";
+//	A.resize(13,-2);
+//	cout<<"\nA : "; for(int i=0;i<A.size();i++) cout<<A[i]<<" ";
+//	cout<<"\nDuyet xuoi : "; for(Vector<int>::iterator it=A.begin();it!=A.end();it++) cout<<*it<<" ";
+//	cout<<"\nDuyet xuoi : "; for(auto x:A) cout<<x<<" ";
+//	sort(A.begin(),A.end(),greater<int> ());
+//	cout<<"\nDuyet xuoi : "; for(auto x:A) cout<<x<<" ";
+//	auto it=A.begin(); it+=7;
+//	A.insert(it,-5);
+//	cout<<"\nDuyet xuoi : "; for(auto x:A) cout<<x<<" ";
+//	it=A.begin(); it+=2;
+//	A.erase(it);
+//	cout<<"\nA : "; for(int x:A) cout<<x<<" ";
+//	Vector<int> B=A;  //toan tu copy
+//	cout<<"\nB : "; for(auto x:B) cout<<x<<" ";	
+//	Vector<int> C;
+//	C=A;    //toan tu gan = 
+//	cout<<"\nC : "; for(auto x:C) cout<<x<<" ";	
+//	cout<<"\nDuyet nguoc : ";
+//	for(Vector<int>::reverse_iterator it=A.rbegin();it!=A.rend();it++) cout<<*it<<" ";
+//}
 
 
