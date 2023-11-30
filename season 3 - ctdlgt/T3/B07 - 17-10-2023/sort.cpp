@@ -27,8 +27,40 @@ insertedSort(int n,int a[]){
 		for(int j=i;j>=0;j--){
 			if(a[j]<a[j-1]){
 				swap(a[j],a[j-1]);
-			}
+			}else break;
 		}
+	}
+}
+
+
+mergeSort(int a[],int from,int to){
+	if(to-from==0) return;
+	int mid = (from+to)/2; //chia doi
+	mergeSort(a,from,mid); //sap xep phan ben trai
+	mergeSort(a,mid+1,to); //sap xep phan ben phai
+	
+	int b[to-from+1];
+	
+	int i = from, j = mid+1,k=0;
+	for(;i<=mid && j<=to;k++){
+		if(i>mid){
+			b[k]=a[j];
+			j++;
+		}else if(j>to){
+			b[k]=a[i];
+			i++;
+		}else if(a[i]<a[j]){
+			b[k]=a[i];
+			i++;
+		}else{
+			b[k]=a[j];
+			j++;
+		}
+	}
+	
+	i=from,k=0;
+	for(;i<=to ;i++,k++){
+		a[i]=b[k];
 	}
 }
 
@@ -36,7 +68,7 @@ insertedSort(int n,int a[]){
 main(){
 	int n = 5;
 	int a[]  = {5,3,1,8,2};
-	insertedSort(n,a);
+	mergeSort(n,a);
 	for(int x:a)cout<<x<<' ';
 }
 
