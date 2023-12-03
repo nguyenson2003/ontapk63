@@ -68,7 +68,6 @@ void mergeSort(int a[],int from,int to){
 void quickSort(int a[],int from,int to){
 	if(from>=to)return;
 	
-	
 	int i = from;
 	int j = to-1;
 	while(i<j){
